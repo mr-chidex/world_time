@@ -1,4 +1,6 @@
-# world_time
+# world_time_app
+
+A flutter practice project.
 
 A new Flutter application.
 
