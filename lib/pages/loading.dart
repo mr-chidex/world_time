@@ -11,8 +11,8 @@ class _LoadingState extends State<Loading> {
   String time = "loading...";
 
   void getWorldTime() async {
-    WorldTime instance = WorldTime(
-        location: 'Berlin', flag: "germany.png", url: "/Europe/Berlin");
+    WorldTime instance =
+        WorldTime(location: 'Lagos', flag: "nigeria.png", url: "/Africa/Lagos");
 
     await instance.getTime();
 

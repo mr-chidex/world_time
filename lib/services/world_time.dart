@@ -23,7 +23,7 @@ class WorldTime {
 
       //create date object
       DateTime now = DateTime.parse(dateTime);
-      now.add(Duration(hours: int.parse(offset)));
+      now = now.add(Duration(hours: int.parse(offset)));
 
       this.isTime = now.hour > 6 && now.hour < 20 ? true : false;
       this.time = DateFormat.jm().format(now);
