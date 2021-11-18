@@ -15,6 +15,9 @@ Seoul
 Chicago
 ```
 
+<img  alt="png" src="./img/home.png" />
+<img  alt="png" src="./img/location.png" />
+
 A new Flutter application.
 
 ## Getting Started
