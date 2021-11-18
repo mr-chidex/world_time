@@ -2,6 +2,19 @@
 
 A flutter practice project.
 
+### choose locations
+
+```
+Lagos
+Berlin
+Athens
+Accra
+London
+New_York
+Seoul
+Chicago
+```
+
 A new Flutter application.
 
 ## Getting Started

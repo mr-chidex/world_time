@@ -21,7 +21,8 @@ class _ChooseLocationState extends State<ChooseLocation> {
   void getNewTime(instance) async {
     await instance.getTime();
 
-    Navigator.pushNamed(context, '/home', arguments: {
+    //back to home
+    Navigator.pop(context, {
       "location": instance.location,
       "flag": instance.flag,
       "time": instance.time,
@@ -34,7 +35,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
     return Scaffold(
         appBar: AppBar(
           title: Text("Choose a location"),
-          backgroundColor: Colors.blue[900],
+          backgroundColor: Colors.grey[850],
           elevation: 0,
           centerTitle: true,
         ),

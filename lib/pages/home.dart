@@ -11,7 +11,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     //get data from loading route
-    data = ModalRoute.of(context).settings.arguments;
+    data = data.isEmpty ? ModalRoute.of(context).settings.arguments : data;
 
     //set background
     bool isTime = data["isTime"];
@@ -32,11 +32,21 @@ class _HomeState extends State<Home> {
             child: Column(
               children: [
                 ElevatedButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/location');
+                  onPressed: () async {
+                    dynamic res =
+                        await Navigator.pushNamed(context, '/location');
+
+                    setState(() {
+                      data = {
+                        "time": res["time"],
+                        "isTime": res["isTime"],
+                        "flag": res["flag"],
+                        "location": res["location"]
+                      };
+                    });
                   },
                   icon: Icon(Icons.edit_location),
-                  label: Text("Edit Location"),
+                  label: Text("Choose Location"),
                   style: ElevatedButton.styleFrom(
                       onPrimary: Colors.white,
                       primary: bgColor,
@@ -48,6 +58,12 @@ class _HomeState extends State<Home> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage("assets/${data['flag']}"),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(
                       data["location"],
                       style: TextStyle(
