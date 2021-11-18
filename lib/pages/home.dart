@@ -12,7 +12,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     //get data from loading route
     data = ModalRoute.of(context).settings.arguments;
-    print(data);
     return Scaffold(
       body: SafeArea(
         child: Padding(

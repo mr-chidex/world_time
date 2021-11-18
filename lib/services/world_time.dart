@@ -7,6 +7,7 @@ class WorldTime {
   String location; //location name for the UI
   String time; // time of location
   String flag; //url to an asset flag
+  bool isTime; //check if day time or night
 
   WorldTime({this.url, this.location, this.flag});
 
@@ -24,6 +25,7 @@ class WorldTime {
       DateTime now = DateTime.parse(dateTime);
       now.add(Duration(hours: int.parse(offset)));
 
+      this.isTime = now.hour > 6 && now.hour < 20 ? true : false;
       this.time = DateFormat.jm().format(now);
     } catch (error) {
       this.time = "could not get time data";
