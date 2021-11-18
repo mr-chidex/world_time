@@ -41,7 +41,8 @@ class _HomeState extends State<Home> {
                         "time": res["time"],
                         "isTime": res["isTime"],
                         "flag": res["flag"],
-                        "location": res["location"]
+                        "location": res["location"],
+                        "day": res["day"],
                       };
                     });
                   },
@@ -75,6 +76,10 @@ class _HomeState extends State<Home> {
                 Text(data["time"],
                     style: TextStyle(
                         fontSize: 65.0, letterSpacing: 2.0, color: txtColor)),
+                SizedBox(height: 20),
+                Text(data["day"],
+                    style: TextStyle(
+                        fontSize: 30.0, letterSpacing: 2.0, color: txtColor)),
               ],
             ),
           ),

@@ -8,6 +8,8 @@ class WorldTime {
   String time; // time of location
   String flag; //url to an asset flag
   bool isTime; //check if day time or night
+  String day;
+  List<String> days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
 
   WorldTime({this.url, this.location, this.flag});
 
@@ -27,6 +29,7 @@ class WorldTime {
 
       this.isTime = now.hour > 6 && now.hour < 20 ? true : false;
       this.time = DateFormat.jm().format(now);
+      this.day = days[now.weekday];
     } catch (error) {
       this.time = "could not get time data";
     }
